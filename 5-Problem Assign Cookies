@@ -1,0 +1,44 @@
+*** This problem LeetCode Assign cookies (Leetcode problem no 455) :
+def find_content_children(g, s):
+    # Sort both greed factors and cookie sizes
+    g.sort()
+    s.sort()
+
+    # Initialize child and cookie pointers
+    child = 0
+    cookie = 0
+    satisfied_children = 0
+
+    # Loop through both arrays
+    while child < len(g) and cookie < len(s):
+        # If the current cookie can satisfy the child's greed
+        if s[cookie] >= g[child]:
+            satisfied_children += 1  # Satisfy this child
+            child += 1  # Move to the next child
+        # Move to the next cookie (whether it satisfied a child or not)
+        cookie += 1
+
+    return satisfied_children
+
+# Example usage:
+g = [1, 2, 3]  # Greed factors of children
+s = [1, 1]  # Sizes of cookies
+result = find_content_children(g, s)
+print("Number of children that can be satisfied:", result)
+Explanation:
+The first child with a greed factor of 1 can be satisfied with one cookie of size 1.
+The second child with a greed factor of 2 cannot be satisfied with the remaining cookie of size 1.
+Therefore, only 1 child can be satisfied.
+Time Complexity:
+Sorting the arrays takes 
+𝑂(𝑛log
+𝑛)O(nlogn), where 
+𝑛 n is the length of the longer array.
+Iterating over both arrays takes 𝑂
+(𝑛)O(n).
+Thus, the overall time complexity is 𝑂(
+𝑛log𝑛
+)O(nlogn), where 
+𝑛=max
+⁡(𝑙𝑒𝑛(𝑔),𝑙𝑒𝑛(𝑠))
+n=max(len(g),len(s)).
