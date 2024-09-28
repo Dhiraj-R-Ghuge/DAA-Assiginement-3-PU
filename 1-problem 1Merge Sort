@@ -39,3 +39,16 @@ def merge(left, right):
 arr = [38, 27, 43, 3, 9, 82, 10]
 sorted_arr = merge_sort(arr)
 print("Sorted array:", sorted_arr)
+
+Info about using time complexity of given problem :
+Time Complexity:
+Splitting the array: Every time we split the array in half, it takes 
+𝑂(log𝑛)
+O(logn) steps since we're dividing the problem in two at each step.
+Merging: The merging step at each level of recursion takes 
+𝑂(𝑛)
+O(n), where 𝑛
+n is the size of the array.
+Thus, the overall time complexity is 
+𝑂(𝑛log⁡𝑛)
+O(nlogn).
