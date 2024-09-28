@@ -32,3 +32,17 @@ n = len(arr)
 min_val, max_val = find_max_min(arr, 0, n-1)
 print("Minimum value:", min_val)
 print("Maximum value:", max_val)
+
+Info about time complexity for using this problem :
+Time Complexity Analysis:
+At each level of recursion, the array is split into two halves.
+Each comparison between two elements is constant time 
+𝑂
+(1)
+O(1).
+There are log
+𝑛
+logn levels of recursion, and each level does a constant amount of work (combining the results).
+Thus, the overall time complexity is 
+𝑂(𝑛)
+O(n), as the array is only processed once through recursion.
